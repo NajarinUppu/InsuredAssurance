@@ -50,3 +50,8 @@ jobs:
         JENKINS_URL: ${{ secrets.JENKINS_URL }}
         JENKINS_USER: ${{ secrets.JENKINS_USER }}
         JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+
+      - name: Test Jenkins Connection
+  run: |
+    curl -v http://localhost:8080/
+
