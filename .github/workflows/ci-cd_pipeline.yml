@@ -25,13 +25,13 @@ jobs:
     - name: Archive JAR file
       uses: actions/upload-artifact@v3
       with:
-        name: java-app
+        name: Calc
         path: target/*.jar
         
     - name: Archive WAR file
       uses: actions/upload-artifact@v3
       with:
-        name: your-app
+        name: Calc
         path: target/*.war
   deploy:
     needs: build
@@ -44,7 +44,11 @@ jobs:
     - name: Download JAR file
       uses: actions/download-artifact@v3
       with:
-        name: java-app
+        name: Calc
+    - name: Download WAR file
+      uses: actions/download-artifact@v3
+      with:
+        name: Calc
         
     - name: Test Jenkins Connection
       run: curl -v ${{ secrets.JENKINS_URL }}
