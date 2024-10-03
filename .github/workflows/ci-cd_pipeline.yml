@@ -27,7 +27,12 @@ jobs:
       with:
         name: java-app
         path: target/*.jar
-
+        
+    - name: Archive WAR file
+      uses: actions/upload-artifact@v3
+      with:
+        name: your-app
+        path: target/*.war
   deploy:
     needs: build
     runs-on: ubuntu-latest
