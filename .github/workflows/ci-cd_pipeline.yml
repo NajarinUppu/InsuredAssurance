@@ -43,7 +43,7 @@ jobs:
 
     - name: Trigger Jenkins Job
       run: |
-        curl -X POST http://localhost:8080/job/InsuredAssurance/build \
+        curl -X POST http://localhost:8080//job/InsuredAssurance/build \
         --user ${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }} \
         --data-urlencode json='{"parameter": [{"name":"JAR_FILE", "value":"$(ls target/*.jar)"}]}'
       env:
